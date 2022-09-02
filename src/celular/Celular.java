@@ -3,7 +3,8 @@ package celular;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
-
+import javafx.scene.media.AudioClip;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class Celular extends Application {
@@ -16,9 +17,26 @@ public class Celular extends Application {
 
     private int memoria;
 
-    
+    private String urlMusic = getClass().getResource("/assets/musica_elevador.mp3").toString();
 
     public StackPane root = new StackPane();
+	
+	// métodos de classe
+	public String installApp(String appName) {
+        String instaledApp = String.format("O app %s foi instalado", appName);
+
+		return instaledApp;
+	}
+	
+	public String openApp(String appName) {
+		return("Oi");
+	}
+
+    public void playMusic() {
+		AudioClip clip = new AudioClip(urlMusic);
+        clip.play();
+        root.getChildren().add(new Text("Tocando Música "));
+	}
 
     @Override
     public void start(Stage primaryStage) {  
