@@ -1,11 +1,12 @@
 package celular;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
 import javafx.scene.media.AudioClip;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import java.io.IOException;
 
 public class Celular extends Application {
 
@@ -17,29 +18,29 @@ public class Celular extends Application {
 
     private int memoria;
 
-    private String urlMusic = getClass().getResource("/assets/musica_elevador.mp3").toString();
-
-    public StackPane root = new StackPane();
+    private String urlMusic = getClass().getResource("./assets/musica_elevador.mp3").toString();
 	
-	// métodos de classe
-	public String installApp(String appName) {
-        String instaledApp = String.format("O app %s foi instalado", appName);
+    // métodos de classe
+      public String installApp(String appName) {
+          String instaledApp = String.format("O app %s foi instalado", appName);
 
-		return instaledApp;
-	}
-	
-	public String openApp(String appName) {
-		return("Oi");
-	}
+      return instaledApp;
+    }
+    
+    public String openApp(String appName) {
+      return(String.format("App %s aberto", appName));
+    }
 
     public void playMusic() {
-		AudioClip clip = new AudioClip(urlMusic);
+      AudioClip clip = new AudioClip(urlMusic);
         clip.play();
-        root.getChildren().add(new Text("Tocando Música "));
-	}
+        System.out.println("Tocando música");
+    }
 
     @Override
-    public void start(Stage primaryStage) {  
+    public void start(Stage primaryStage) throws IOException {  
+        Parent root = FXMLLoader.load(getClass().getResource("celular.fxml"));
+
         Scene scene = new Scene(root, 600, 400);
         
         primaryStage.setTitle("Hello World!");
