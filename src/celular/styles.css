@@ -1,0 +1,31 @@
+@font-face {
+  src: url('./fonts/Poppins-Medium.ttf');
+  src: url('./fonts/Poppins-Regular.ttf');
+  src: url('./fonts/Poppins-Light.ttf');
+}
+.label, #title {
+  -fx-font-family: 'Poppins Regular';
+  -fx-color: red;
+  -fx-font-size: 20px;
+}
+
+#pane {
+  
+}
+
+/* arredonda e define estilo para input */
+/* .text-field, #input {
+  -fx-border-radius: 20px;
+  -fx-background-radius: 20px ;
+  -fx-min-width: 200px;
+  -fx-min-height: 35px;
+  -fx-padding: 15px;
+  -fx-border-width: 3px;
+  -fx-border-color: green;
+} */
+
+/* input em foco */
+/* .text-field:focused, #input:focused {
+  -fx-background-color: -fx-focus-color, -fx-background ;
+  -fx-focus-color: red;
+} */

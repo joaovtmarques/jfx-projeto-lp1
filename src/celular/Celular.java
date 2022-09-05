@@ -21,10 +21,18 @@ public class Celular extends Application {
     private String urlMusic = getClass().getResource("./assets/musica_elevador.mp3").toString();
 	
     // métodos de classe
-      public String installApp(String appName) {
-          String instaledApp = String.format("O app %s foi instalado", appName);
+    public Celular(String marca, String modelo, String cor, String camera, int memoria) {
+      this.marca = marca;
+      this.modelo = modelo;
+      this.cor = cor;
+      this.camera = camera;
+      this.memoria = memoria;
+    }
 
-      return instaledApp;
+    public String installApp(String appName) {
+      String instaledApp = String.format("O app %s foi instalado", appName);
+
+    return instaledApp;
     }
     
     public String openApp(String appName) {
@@ -39,20 +47,20 @@ public class Celular extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {  
-        Parent root = FXMLLoader.load(getClass().getResource("celular.fxml"));
+      Parent root = FXMLLoader.load(getClass().getResource("celular.fxml"));
 
-        Scene scene = new Scene(root, 600, 400);
-        
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+      Scene scene = new Scene(root, 600, 400);
+      
+      primaryStage.setTitle("Hello World!");
+      primaryStage.setScene(scene);
+      primaryStage.show();
     }
 
     public static void main(String[] args) {
-        launch(args);
+      launch(args);
     }
 
-    public String getMarca() {
+  public String getMarca() {
 		return marca;
 	}
 
@@ -60,7 +68,7 @@ public class Celular extends Application {
 		this.marca = marca;
 	}
 
-    public String getModelo() {
+  public String getModelo() {
 		return modelo;
 	}
 
@@ -68,28 +76,28 @@ public class Celular extends Application {
 		this.modelo = modelo;
 	}
 
-    public String getCor() {
+  public String getCor() {
 		return cor;
 	}
 
 	public void setCor(String cor) {
 		this.cor = cor;
-    }
+  }
 
-    public String getCamera() {
+  public String getCamera() {
 		return camera;
 	}
 
 	public void setCamera(String camera) {
 		this.camera = camera;
-    }
+  }
     
-    public int getMemoria() {
+  public int getMemoria() {
 		return memoria;
 	}
 
 	public void setMemoria(int memoria) {
 		this.memoria = memoria;
-    }
+  }
     
 }

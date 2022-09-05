@@ -14,7 +14,13 @@ public class CelularController implements Initializable {
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    Celular celular = new Celular();
+    Celular celular = new Celular(
+      "Apple", 
+      "Iphone 12", 
+      "Grafite", 
+      "12mpx", 
+      128
+    );
   
     btn.setOnMouseClicked(event -> {
       celular.playMusic();
