@@ -10,19 +10,13 @@ import javafx.scene.control.Button;
 public class CelularController implements Initializable {
 
   @FXML
-  private Button btn;
+  private Button playMusicBtn;
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    Celular celular = new Celular(
-      "Apple", 
-      "Iphone 12", 
-      "Grafite", 
-      "12mpx", 
-      128
-    );
+    Celular celular = new Celular();
   
-    btn.setOnMouseClicked(event -> {
+    playMusicBtn.setOnMouseClicked(event -> {
       celular.playMusic();
     });
   }

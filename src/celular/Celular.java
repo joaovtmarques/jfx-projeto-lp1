@@ -21,13 +21,13 @@ public class Celular extends Application {
     private String urlMusic = getClass().getResource("./assets/musica_elevador.mp3").toString();
 	
     // métodos de classe
-    public Celular(String marca, String modelo, String cor, String camera, int memoria) {
-      this.marca = marca;
-      this.modelo = modelo;
-      this.cor = cor;
-      this.camera = camera;
-      this.memoria = memoria;
-    }
+    // public Celular() {
+    //   // this.marca = marca;
+    //   // this.modelo = modelo;
+    //   // this.cor = cor;
+    //   // this.camera = camera;
+    //   // this.memoria = memoria;
+    // }
 
     public String installApp(String appName) {
       String instaledApp = String.format("O app %s foi instalado", appName);
@@ -47,11 +47,12 @@ public class Celular extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {  
-      Parent root = FXMLLoader.load(getClass().getResource("celular.fxml"));
+      Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
 
-      Scene scene = new Scene(root, 600, 400);
+      Scene scene = new Scene(root, 900, 600);
       
       primaryStage.setTitle("Hello World!");
+      primaryStage.setResizable(false);
       primaryStage.setScene(scene);
       primaryStage.show();
     }
