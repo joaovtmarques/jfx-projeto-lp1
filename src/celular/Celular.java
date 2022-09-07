@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.media.AudioClip;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 
 public class Celular extends Application {
@@ -32,7 +33,7 @@ public class Celular extends Application {
     public String installApp(String appName) {
       String instaledApp = String.format("O app %s foi instalado", appName);
 
-    return instaledApp;
+      return instaledApp;
     }
     
     public String openApp(String appName) {
