@@ -29,7 +29,6 @@
   -fx-text-fill: #146bf7;
 }
 
-
 #title1 {
   -fx-font-family: 'Poppins Medium';
   -fx-text-fill: #00d289;
@@ -158,4 +157,65 @@
 }
 #input2:focused {
   -fx-border-color: #a1c7ff;
+}
+
+#addPhonePane {
+  -fx-background-color: #fff;
+}
+
+#titleAdd {
+  -fx-font-family: 'Poppins Medium';
+  -fx-text-fill: #ff7327;
+  -fx-font-size: 18px;
+}
+
+#closeButton {
+  -fx-font-family: 'Poppins Medium';
+  -fx-text-fill: #fff;
+  -fx-min-height: 45px;
+  -fx-min-width: 45px;
+  -fx-background-radius: 15px;
+  -fx-border-radius: 15px;
+  -fx-font-size: 16px;
+  -fx-background-color: #f6a67b;
+  -fx-border-color: #ff7327;
+}
+
+#closeButton:hover {
+  -fx-background-color: transparent;
+  -fx-text-fill: #ff7327;
+}
+
+#inputAdd {
+  -fx-max-height: 40px;
+  -fx-border-color: #ff7327;
+  -fx-background-color: #fff;
+  -fx-text-fill: #ff7327; 
+  -fx-prompt-text-fill: #ff7327;
+}
+#inputAdd:focused {
+  -fx-border-color: #f6a67b;
+  -fx-prompt-text-fill: transparent;
+}
+
+#placeholder {
+  -fx-font-family: 'Poppins Regular';
+  -fx-text-fill: #f6a67b;
+}
+
+#buttonAdd {
+  -fx-font-family: 'Poppins Medium';
+  -fx-min-height: 45px;
+  -fx-min-width: 200px;
+  -fx-background-radius: 30px;
+  -fx-border-radius: 30px;
+  -fx-border-color: #ff7327;
+  -fx-background-color: #f6a67b;
+  -fx-text-fill: #fff;
+  -fx-cursor: hand;
+}
+
+#buttonAdd:hover {
+  -fx-text-fill: #ff7327;
+  -fx-background-color: transparent;
 }
