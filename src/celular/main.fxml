@@ -51,12 +51,13 @@
       </Pane>
       <Pane id="addPhonePane" fx:id="addPhonePane" layoutX="-10.0" layoutY="-7.0" prefHeight="621.0" prefWidth="923.0" stylesheets="@styles.css">
          <children>
-            <Label id="titleAdd" layoutX="43.0" layoutY="45.0" text="Adicione um celular" textFill="WHITE">
+            <Pane id="addBackPane" layoutX="8.0" layoutY="71.0" prefHeight="551.0" prefWidth="915.0" stylesheets="@styles.css" />
+            <Label id="titleAdd" layoutX="43.0" layoutY="28.0" text="Adicione um celular" textFill="WHITE">
                <font>
                   <Font size="37.0" />
                </font>
             </Label>
-            <Button id="closeButton" fx:id="closeButton" layoutX="837.0" layoutY="36.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" text="X" />
+            <Button id="closeButton" fx:id="closeButton" layoutX="836.0" layoutY="18.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" text="X" />
             <Group layoutX="362.0" layoutY="193.0">
                <children>
                   <TextField id="inputAdd" fx:id="inputAdd1" minHeight="23.0" prefHeight="45.0" prefWidth="200.0" promptText="Marca" stylesheets="@styles.css" />

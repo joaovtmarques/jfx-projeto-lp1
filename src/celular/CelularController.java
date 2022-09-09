@@ -10,6 +10,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
 public class CelularController implements Initializable {
 
   @FXML
@@ -102,7 +106,7 @@ public class CelularController implements Initializable {
       addPhonePane.setVisible(false);
     });
 
-    addPhoneButton.setOnMouseClicked(event -> {
+    addPhoneButton.setOnAction(event -> {
       String marca = inputAdd1.getText();
       String modelo = inputAdd2.getText();
       String cor = inputAdd3.getText();
@@ -114,6 +118,37 @@ public class CelularController implements Initializable {
       celular.setCor(cor);
       celular.setCamera(camera);
       celular.setMemoria(memoria);
+
+      try (PrintWriter writer = new PrintWriter(new File("celulares.csv"))) {
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("Marca");
+        sb.append(',');
+        sb.append("Modelo");
+        sb.append(',');
+        sb.append("Cor");
+        sb.append(',');
+        sb.append("Câmera");
+        sb.append(',');
+        sb.append("Memória");
+        sb.append('\n');
+
+        sb.append(celular.getMarca());
+        sb.append(',');
+        sb.append(celular.getModelo());
+        sb.append(',');
+        sb.append(celular.getCor());
+        sb.append(',');
+        sb.append(celular.getCamera());
+        sb.append(',');
+        sb.append(celular.getMemoria());
+        sb.append('\n');
+
+        writer.write(sb.toString());
+        writer.close();
+      } catch (FileNotFoundException e) {
+          System.out.println(e.getMessage());
+      }
     });
 
   }

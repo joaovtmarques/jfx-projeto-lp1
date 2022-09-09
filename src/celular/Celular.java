@@ -7,13 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.media.AudioClip;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import com.opencsv.CSVWriter;
 
 public class Celular extends Application {
 
@@ -26,8 +20,6 @@ public class Celular extends Application {
     private int memoria;
 
     private final String urlMusic = getClass().getResource("./assets/musica_elevador.mp3").toString();
-
-    private static final String CSV_PATH = "/tmp/test.csv";
 
     @Override
     public void start(Stage primaryStage) throws IOException {  
@@ -42,33 +34,6 @@ public class Celular extends Application {
     }
 
     public static void main(String[] args) {
-      try {
-        FileWriter fw = new FileWriter(new File(CSV_PATH));
-  
-        CSVWriter CW = new CSVWriter(fw);
-  
-        String[] headers = {"marca", "modelo", "cor", "camera", "memoria"};
-  
-        List<String[]> data = new ArrayList<String[]>();
-  
-        String[] cel1 = {"Apple", "iPhone 12", "preto", "12mpx", "128"};
-        String[] cel2 = {"Motorola", "Moto g9", "preto", "20mpx", "256"};
-        String[] cel3 = {"Samsung", "Galaxy s7", "vermelho", "12mpx", "64"};
-  
-        data.add(headers);
-        data.add(cel1);
-        data.add(cel2);
-        data.add(cel3);
-  
-        CW.writeAll(data);
-  
-        CW.close();
-        fw.close();
-  
-        } catch (IOException e) {
-          System.out.println(e);
-        }
-
       launch(args);
     }
 

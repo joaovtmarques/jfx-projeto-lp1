@@ -219,3 +219,7 @@
   -fx-text-fill: #ff7327;
   -fx-background-color: transparent;
 }
+
+#addBackPane {
+  -fx-background-color: #fdebe2;
+}
