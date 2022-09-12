@@ -5,8 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.media.AudioClip;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 public class Celular extends Application {
@@ -52,6 +54,18 @@ public class Celular extends Application {
     public void playMusic() {
       AudioClip clip = new AudioClip(urlMusic);
         clip.play();
+    }
+
+    public File chooseImage() {
+      final FileChooser fileChooser = new FileChooser();
+
+      File file = fileChooser.showOpenDialog(null);
+
+      if (file != null) {
+        return file;
+      }
+
+      return null;
     }
 
     public void createCsv() {

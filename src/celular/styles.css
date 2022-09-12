@@ -223,3 +223,30 @@
 #addBackPane {
   -fx-background-color: #fdebe2;
 }
+
+#button4 {
+  -fx-font-family: 'Poppins Medium';
+  -fx-text-fill: #fff;
+  -fx-min-height: 45px;
+  -fx-min-width: 200px;
+  -fx-background-radius: 30px;
+  -fx-border-radius: 30px;
+  -fx-background-color: #ff2727;
+  -fx-border-color: #ff7777;
+  -fx-cursor: hand;
+}
+
+#button4:hover {
+  -fx-background-color: transparent;
+  -fx-text-fill: #ff2727;
+}
+
+#title4 {
+  -fx-font-family: 'Poppins Medium';
+  -fx-text-fill: #ff2727;
+  -fx-font-size: 18px;
+}
+
+#openImagePane {
+  -fx-background-color: #ffc7c7;
+}

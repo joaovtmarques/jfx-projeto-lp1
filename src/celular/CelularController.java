@@ -8,6 +8,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
 import java.io.File;
@@ -63,6 +65,18 @@ public class CelularController implements Initializable {
 
   @FXML
   private Button addPhoneButton;
+
+  @FXML
+  private Button openImageBtn;
+
+  @FXML
+  private ImageView imageView;
+
+  @FXML
+  private Pane paneImage;
+
+  @FXML
+  private Button closeButton2;
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
@@ -151,6 +165,22 @@ public class CelularController implements Initializable {
       }
     });
 
+    paneImage.setVisible(false);
+
+    openImageBtn.setOnAction(event -> {
+      File file = celular.chooseImage();
+
+      System.out.println(file.toURI().toString());
+
+      Image img = new Image(file.toURI().toString());
+
+      imageView.setImage(img);
+      paneImage.setVisible(true);
+    });
+
+    closeButton2.setOnMouseClicked(event -> {
+      paneImage.setVisible(false);
+    });
   }
 }
 
