@@ -29,5 +29,5 @@ Além disso, é legal ter um bom editor de código, como o [VSCode](https://code
 $ git clone <https://github.com/joaovtmarques/jfx-projeto-lp1>
 
 # Abra o projeto no seu editor de código
-# e rode a aplicação
+# e rode a classe Celular
 ```
