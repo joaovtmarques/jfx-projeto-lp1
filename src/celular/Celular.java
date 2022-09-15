@@ -13,13 +13,12 @@ import java.io.IOException;
 
 public class Celular extends Application {
 
-    // atributos
     private String marca;
     private String modelo;
     private String cor;
     private String camera;
 
-    private int memoria;
+    private Integer memoria;
 
     private final String urlMusic = getClass().getResource("./assets/musica_elevador.mp3").toString();
 

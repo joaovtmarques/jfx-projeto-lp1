@@ -5,9 +5,11 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -142,9 +144,9 @@ public class CelularController implements Initializable {
         sb.append(',');
         sb.append("Cor");
         sb.append(',');
-        sb.append("Câmera");
+        sb.append("Camera");
         sb.append(',');
-        sb.append("Memória");
+        sb.append("Memoria");
         sb.append('\n');
 
         sb.append(celular.getMarca());
@@ -160,6 +162,13 @@ public class CelularController implements Initializable {
 
         writer.write(sb.toString());
         writer.close();
+
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Cadastrado com sucesso");
+        alert.setHeaderText("Seu celular foi adicionado ao csv!");
+        alert.setContentText("Você pode conferir indo até a raíz do projeto e abrindo o arquivo celulares.csv");
+
+        alert.showAndWait();
       } catch (FileNotFoundException e) {
           System.out.println(e.getMessage());
       }
