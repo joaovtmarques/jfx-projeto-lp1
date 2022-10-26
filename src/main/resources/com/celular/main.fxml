@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="label" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.celular.controller.CelularController">
+    <children>
+        <Pane id="header" prefHeight="67.0" prefWidth="900.0">
+            <children>
+                <Button id="addBtn" fx:id="addButton" layoutX="828.0" layoutY="11.0" mnemonicParsing="false" text="+" textFill="WHITE" />
+                <Label id="titleHeader" layoutX="29.0" layoutY="20.0" text="Celular" />
+            </children>
+        </Pane>
+        <Pane id="pane1" layoutY="67.0" prefHeight="533.0" prefWidth="306.0" stylesheets="@styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="594.0" AnchorPane.topAnchor="67.0">
+            <children>
+                <Label id="title1" fx:id="title1" alignment="CENTER" layoutY="93.0" prefHeight="35.0" prefWidth="306.0" stylesheets="@styles.css" text="Instalar app" textAlignment="CENTER">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <TextField id="input1" fx:id="input1" layoutX="54.0" layoutY="171.0" minHeight="23.0" prefHeight="45.0" prefWidth="200.0" styleClass="text-field" />
+                <Button id="button1" fx:id="button1" layoutX="54.0" layoutY="233.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="147.0" text="INSTALAR" />
+                <Label id="text1" fx:id="text1" layoutX="1.0" layoutY="329.0" prefHeight="17.0" prefWidth="306.0" />
+            </children>
+        </Pane>
+        <Pane id="pane2" layoutX="306.0" layoutY="67.0" prefHeight="533.0" prefWidth="306.0" stylesheets="@styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="306.0" AnchorPane.rightAnchor="288.0" AnchorPane.topAnchor="67.0">
+            <children>
+                <Label id="title2" fx:id="title2" alignment="CENTER" layoutY="95.0" prefHeight="35.0" prefWidth="306.0" stylesheets="@styles.css" text="Abrir app" textAlignment="CENTER">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <TextField id="input2" fx:id="input2" layoutX="53.0" layoutY="173.0" minHeight="23.0" prefHeight="45.0" prefWidth="200.0" styleClass="text-field" />
+                <Button id="button2" fx:id="button2" layoutX="53.0" layoutY="234.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="147.0" text="ABRIR" />
+                <Label id="text2" fx:id="text2" layoutY="334.0" prefHeight="17.0" prefWidth="306.0" />
+            </children>
+        </Pane>
+        <Pane id="pane3" layoutX="603.0" layoutY="68.0" prefHeight="268.0" prefWidth="298.0" stylesheets="@styles.css" AnchorPane.bottomAnchor="264.0" AnchorPane.leftAnchor="603.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="68.0">
+            <children>
+                <Pane prefHeight="551.0" prefWidth="313.0">
+                    <children>
+                        <Pane id="openImagePane" layoutX="2.0" layoutY="267.0" prefHeight="279.0" prefWidth="313.0">
+                            <children>
+                                <Label id="title4" fx:id="title4" alignment="CENTER" layoutY="85.0" prefHeight="35.0" prefWidth="306.0" stylesheets="@styles.css" text="Abrir foto" textAlignment="CENTER">
+                                    <font>
+                                        <Font size="24.0" />
+                                    </font>
+                                </Label>
+                                <Button id="button4" fx:id="openImageBtn" layoutX="53.0" layoutY="159.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="111.0" style="-fx-border-radius: 45;" stylesheets="@styles.css" text="ESCOLHER" textFill="WHITE" />
+                            </children>
+                        </Pane>
+                        <Button id="button3" fx:id="playMusicBtn" layoutX="57.0" layoutY="145.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="111.0" style="-fx-border-radius: 45;" stylesheets="@styles.css" text="TOCAR" textFill="WHITE" />
+                        <Label id="title3" fx:id="title" alignment="CENTER" layoutX="4.0" layoutY="63.0" prefHeight="35.0" prefWidth="306.0" stylesheets="@styles.css" text="Tocar música" textAlignment="CENTER">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+            </children>
+        </Pane>
+        <Pane id="addPhonePane" fx:id="addPhonePane" layoutX="-10.0" layoutY="-7.0" prefHeight="621.0" prefWidth="923.0" stylesheets="@styles.css">
+            <children>
+                <Pane id="addBackPane" layoutX="8.0" layoutY="71.0" prefHeight="551.0" prefWidth="915.0" stylesheets="@styles.css">
+                    <children>
+                        <Group layoutX="178.0" layoutY="135.0">
+                            <children>
+                                <TextField id="inputAdd" fx:id="inputAdd1" minHeight="23.0" prefHeight="45.0" prefWidth="200.0" promptText="Marca" stylesheets="@styles.css" />
+                            </children>
+                        </Group>
+                        <Group layoutX="178.0" layoutY="190.0">
+                            <children>
+                                <TextField id="inputAdd" fx:id="inputAdd2" minHeight="23.0" prefHeight="45.0" prefWidth="200.0" promptText="Modelo" stylesheets="@styles.css" />
+                            </children>
+                        </Group>
+                        <Group layoutX="178.0" layoutY="243.0">
+                            <children>
+                                <TextField id="inputAdd" fx:id="inputAdd3" minHeight="23.0" prefHeight="45.0" prefWidth="200.0" promptText="Cor" stylesheets="@styles.css" />
+                            </children>
+                        </Group>
+                        <Group layoutX="178.0" layoutY="294.0">
+                            <children>
+                                <TextField id="inputAdd" fx:id="inputAdd4" minHeight="23.0" prefHeight="45.0" prefWidth="200.0" promptText="Câmera (ex: 12mpx)" stylesheets="@styles.css" />
+                            </children>
+                        </Group>
+                        <Group id="placeholder" layoutX="178.0" layoutY="346.0">
+                            <children>
+                                <TextField id="inputAdd" fx:id="inputAdd5" minHeight="23.0" prefHeight="45.0" prefWidth="200.0" promptText="Memória (ex: 128)" stylesheets="@styles.css" />
+                            </children>
+                        </Group>
+                        <Button id="buttonAdd" fx:id="addPhoneButton" layoutX="178.0" layoutY="401.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="147.0" text="ADICIONAR" />
+                    </children></Pane>
+                <Label id="titleAdd" layoutX="43.0" layoutY="28.0" text="Adicione um celular" textFill="WHITE">
+                    <font>
+                        <Font size="37.0" />
+                    </font>
+                </Label>
+                <Button id="closeButton" fx:id="closeButton" layoutX="836.0" layoutY="18.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" text="X" />
+            </children>
+        </Pane>
+        <Pane fx:id="paneImage">
+            <children>
+                <ImageView fx:id="imageView" fitHeight="630.0" fitWidth="923.0" pickOnBounds="true" preserveRatio="true" />
+                <Button id="closeButton" fx:id="closeButton2" layoutX="846.0" layoutY="28.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" text="X" />
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>
