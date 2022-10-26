@@ -1,6 +1,7 @@
 package celular;
 
 import java.net.URL;
+import java.util.HashSet;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -92,6 +93,8 @@ public class CelularController implements Initializable {
 
     closeButton.setOnMouseClicked(event -> {
       addPhonePane.setVisible(false);
+      System.out.println("-------------------------------------------");
+
       for(Celular c:loja.getCelular()) {
         System.out.println("Id: "+c.getId());
         System.out.println("Marca: "+c.getMarca());
@@ -100,6 +103,10 @@ public class CelularController implements Initializable {
         System.out.println("Camera: "+c.getCamera());
         System.out.println("Memória: "+c.getMemoria());
         System.out.println("Tamanho: "+loja.getCelular().size());
+      }
+      System.out.println("-------------------------------------------");
+      for(Integer id:loja.getHashCelular()) {
+        System.out.println("Id: "+id);
       }
     });
 
@@ -131,6 +138,9 @@ public class CelularController implements Initializable {
       loja.setNome("newPhone");
       loja.setTelefone(new Long(1296438656));
       loja.addCelular(cel);
+
+      HashSet<Celular> dset = new HashSet<Celular>();
+	    dset.add(new Celular());
   
       Alert alert = new Alert(AlertType.INFORMATION);
       alert.setTitle("Cadastrado com sucesso");
