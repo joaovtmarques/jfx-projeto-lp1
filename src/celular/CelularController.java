@@ -3,6 +3,8 @@ package celular;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import celular.model.Celular;
+import celular.model.Loja;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -21,64 +23,32 @@ import java.io.PrintWriter;
 public class CelularController implements Initializable {
 
   @FXML
-  private Button playMusicBtn;
+  private Button playMusicBtn, 
+    button1, 
+    button2, 
+    addButton, 
+    closeButton, 
+    addPhoneButton, 
+    openImageBtn, 
+    closeButton2;
 
   @FXML
-  private Button button1;
+  private TextField input1, 
+    input2, 
+    inputAdd1, 
+    inputAdd2, 
+    inputAdd3, 
+    inputAdd4, 
+    inputAdd5;
 
   @FXML
-  private TextField input1;
+  private Label text1, text2;
 
   @FXML
-  private Label text1;
-
-  @FXML
-  private Button button2;
-
-  @FXML
-  private TextField input2;
-
-  @FXML
-  private Label text2;
-
-  @FXML
-  private Button addButton;
-
-  @FXML
-  private Pane addPhonePane;
-
-  @FXML
-  private Button closeButton;
-
-  @FXML
-  private TextField inputAdd1;
-
-  @FXML
-  private TextField inputAdd2;
-
-  @FXML
-  private TextField inputAdd3;
-
-  @FXML
-  private TextField inputAdd4;
-
-  @FXML
-  private TextField inputAdd5;
-
-  @FXML
-  private Button addPhoneButton;
-
-  @FXML
-  private Button openImageBtn;
+  private Pane addPhonePane, paneImage;
 
   @FXML
   private ImageView imageView;
-
-  @FXML
-  private Pane paneImage;
-
-  @FXML
-  private Button closeButton2;
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
@@ -128,49 +98,34 @@ public class CelularController implements Initializable {
       String cor = inputAdd3.getText();
       String camera = inputAdd4.getText();
       int memoria = Integer.parseInt(inputAdd5.getText());
+
+      Celular cel = new Celular(
+        marca,
+        modelo,
+        cor,
+        camera,
+        memoria
+      );
+
+      Loja loja = new Loja();
+
+      loja.setNome("newPhone");
+      loja.setTelefone(new Long(1296438656));
+      loja.addCelular(cel);
   
-      celular.setMarca(marca);
-      celular.setModelo(modelo);
-      celular.setCor(cor);
-      celular.setCamera(camera);
-      celular.setMemoria(memoria);
+      Alert alert = new Alert(AlertType.INFORMATION);
+      alert.setTitle("Cadastrado com sucesso");
+      alert.setHeaderText("Seu celular foi adicionado ao csv!");
+      alert.setContentText("Você pode conferir indo até a raíz do projeto e abrindo o arquivo celulares.csv");
 
-      try (PrintWriter writer = new PrintWriter(new File("celulares.csv"))) {
+      alert.showAndWait();
 
-        StringBuilder sb = new StringBuilder();
-        sb.append("Marca");
-        sb.append(',');
-        sb.append("Modelo");
-        sb.append(',');
-        sb.append("Cor");
-        sb.append(',');
-        sb.append("Camera");
-        sb.append(',');
-        sb.append("Memoria");
-        sb.append('\n');
-
-        sb.append(celular.getMarca());
-        sb.append(',');
-        sb.append(celular.getModelo());
-        sb.append(',');
-        sb.append(celular.getCor());
-        sb.append(',');
-        sb.append(celular.getCamera());
-        sb.append(',');
-        sb.append(celular.getMemoria());
-        sb.append('\n');
-
-        writer.write(sb.toString());
-        writer.close();
-
-        Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle("Cadastrado com sucesso");
-        alert.setHeaderText("Seu celular foi adicionado ao csv!");
-        alert.setContentText("Você pode conferir indo até a raíz do projeto e abrindo o arquivo celulares.csv");
-
-        alert.showAndWait();
-      } catch (FileNotFoundException e) {
-          System.out.println(e.getMessage());
+      for(Celular c:loja.getCelular()) {
+        System.out.println("Marca: "+c.getMarca());
+        System.out.println("Modelo: "+c.getModelo());
+        System.out.println("Cor: "+c.getCor());
+        System.out.println("Camera: "+c.getCamera());
+        System.out.println("Memória: "+c.getMemoria());
       }
     });
 

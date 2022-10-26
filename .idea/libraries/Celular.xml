@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Celular">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/Celular.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
