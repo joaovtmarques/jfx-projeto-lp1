@@ -1,6 +1,7 @@
 package celular;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import celular.model.Celular;
@@ -53,6 +54,7 @@ public class CelularController implements Initializable {
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     Celular celular = new Celular();
+    Loja loja = new Loja();
 
     button1.setOnMouseClicked(event -> {
       String appName = input1.getText();
@@ -90,6 +92,15 @@ public class CelularController implements Initializable {
 
     closeButton.setOnMouseClicked(event -> {
       addPhonePane.setVisible(false);
+      for(Celular c:loja.getCelular()) {
+        System.out.println("Id: "+c.getId());
+        System.out.println("Marca: "+c.getMarca());
+        System.out.println("Modelo: "+c.getModelo());
+        System.out.println("Cor: "+c.getCor());
+        System.out.println("Camera: "+c.getCamera());
+        System.out.println("Memória: "+c.getMemoria());
+        System.out.println("Tamanho: "+loja.getCelular().size());
+      }
     });
 
     addPhoneButton.setOnAction(event -> {
@@ -99,15 +110,23 @@ public class CelularController implements Initializable {
       String camera = inputAdd4.getText();
       int memoria = Integer.parseInt(inputAdd5.getText());
 
+      List<Celular> celulares = loja.getCelular();
+
+      Integer id = null;
+      id = (celulares.size()+1);
+
+      if(id == -1) {
+        id = 1;
+      }
+
       Celular cel = new Celular(
+        id,
         marca,
         modelo,
         cor,
         camera,
         memoria
       );
-
-      Loja loja = new Loja();
 
       loja.setNome("newPhone");
       loja.setTelefone(new Long(1296438656));
@@ -119,14 +138,6 @@ public class CelularController implements Initializable {
       alert.setContentText("Você pode conferir indo até a raíz do projeto e abrindo o arquivo celulares.csv");
 
       alert.showAndWait();
-
-      for(Celular c:loja.getCelular()) {
-        System.out.println("Marca: "+c.getMarca());
-        System.out.println("Modelo: "+c.getModelo());
-        System.out.println("Cor: "+c.getCor());
-        System.out.println("Camera: "+c.getCamera());
-        System.out.println("Memória: "+c.getMemoria());
-      }
     });
 
     paneImage.setVisible(false);

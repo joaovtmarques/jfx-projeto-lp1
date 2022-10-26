@@ -3,8 +3,10 @@ package celular.model;
 import javafx.scene.media.AudioClip;
 import javafx.stage.FileChooser;
 import java.io.File;
+import java.util.List;
 
 public class Celular {
+  private Integer id;
   private String marca;
   private String modelo;
   private String cor;
@@ -18,12 +20,14 @@ public class Celular {
   }
 
   public Celular(
+    Integer id,
     String marca, 
     String modelo, 
     String cor, 
     String camera,
     Integer memoria
   ) {
+    this.id = id;
     this.marca = marca;
     this.modelo = modelo;
     this.cor = cor;
@@ -57,6 +61,14 @@ public class Celular {
     }
 
     return null;
+  }
+
+  public Integer getId() {
+    return id;
+  }
+
+  public void setId(Integer id) {
+    this.id = id;
   }
 
   public String getMarca() {
