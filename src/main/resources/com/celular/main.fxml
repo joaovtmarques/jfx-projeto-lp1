@@ -6,7 +6,9 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="label" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.celular.controller.CelularController">
@@ -65,7 +67,13 @@
                 </Pane>
             </children>
         </Pane>
-        <Pane id="addPhonePane" fx:id="addPhonePane" layoutX="-10.0" layoutY="-7.0" prefHeight="621.0" prefWidth="923.0" stylesheets="@styles.css">
+        <Pane fx:id="paneImage">
+            <children>
+                <ImageView fx:id="imageView" fitHeight="630.0" fitWidth="923.0" pickOnBounds="true" preserveRatio="true" />
+                <Button id="closeButton" fx:id="closeButton2" layoutX="846.0" layoutY="28.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" text="X" />
+            </children>
+        </Pane>
+        <Pane id="addPhonePane" fx:id="addPhonePane" prefHeight="621.0" prefWidth="923.0" stylesheets="@styles.css">
             <children>
                 <Pane id="addBackPane" layoutX="8.0" layoutY="71.0" prefHeight="551.0" prefWidth="915.0" stylesheets="@styles.css">
                     <children>
@@ -95,7 +103,9 @@
                             </children>
                         </Group>
                         <Button id="buttonAdd" fx:id="addPhoneButton" layoutX="178.0" layoutY="401.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="147.0" text="ADICIONAR" />
-                    </children></Pane>
+                  <Button id="buttonAdd" fx:id="searchPhone" layoutX="657.0" layoutY="135.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="147.0" text="PROCURAR CELULAR" />
+                    </children>
+            </Pane>
                 <Label id="titleAdd" layoutX="43.0" layoutY="28.0" text="Adicione um celular" textFill="WHITE">
                     <font>
                         <Font size="37.0" />
@@ -104,11 +114,21 @@
                 <Button id="closeButton" fx:id="closeButton" layoutX="836.0" layoutY="18.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" text="X" />
             </children>
         </Pane>
-        <Pane fx:id="paneImage">
-            <children>
-                <ImageView fx:id="imageView" fitHeight="630.0" fitWidth="923.0" pickOnBounds="true" preserveRatio="true" />
-                <Button id="closeButton" fx:id="closeButton2" layoutX="846.0" layoutY="28.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" text="X" />
-            </children>
-        </Pane>
+      <Pane id="addPhonePane" fx:id="searchPane" layoutX="10.0" layoutY="10.0" prefHeight="621.0" prefWidth="923.0" stylesheets="@styles.css" AnchorPane.bottomAnchor="-31.600000000000023" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="-33.200000000000045" AnchorPane.topAnchor="10.0">
+         <children>
+            <HBox id="searchContainer" minWidth="-Infinity" prefHeight="87.0" prefWidth="0.0" spacing="210.0" stylesheets="@search.css">
+               <children>
+                  <HBox minWidth="600.0" prefHeight="57.0" prefWidth="598.0">
+                     <children>
+                        <TextField id="input" fx:id="searchInput" maxHeight="50.0" maxWidth="556.0" minHeight="50.0" minWidth="457.0" prefHeight="323.0" prefWidth="556.0" stylesheets="@search.css" />
+                        <Button id="button" fx:id="searchButton" alignment="CENTER" minWidth="119.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="119.0" stylesheets="@search.css" text="BUSCAR" textAlignment="CENTER" />
+                     </children>
+                  </HBox>
+                  <Button id="closeButton" fx:id="closeSearch" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" text="X" />
+               </children>
+            </HBox>
+            <VBox fx:id="list" layoutY="88.0" prefHeight="533.0" prefWidth="923.0" />
+         </children>
+      </Pane>
     </children>
 </AnchorPane>

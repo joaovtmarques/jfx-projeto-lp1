@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.celular.controller.SearchController">
+   <children>
+      <ScrollPane id="scroll" fitToHeight="true" fitToWidth="true" prefHeight="400.0" prefWidth="600.0" stylesheets="@search.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <VBox id="content" prefHeight="385.0" prefWidth="522.0" stylesheets="@search.css">
+               <children>
+                  <HBox id="searchContainer" minWidth="-Infinity" prefHeight="87.0" prefWidth="0.0" stylesheets="@search.css">
+                     <children>
+                        <TextField id="input" minWidth="457.0" prefHeight="50.0" prefWidth="457.0" stylesheets="@search.css" />
+                        <Button id="button" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="103.0" stylesheets="@search.css" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../java/com/celular/assets/search.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <VBox id="listContainer" fx:id="list" prefHeight="318.0" prefWidth="599.0" stylesheets="@search.css" />
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

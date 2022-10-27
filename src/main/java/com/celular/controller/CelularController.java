@@ -8,16 +8,16 @@ import java.util.ResourceBundle;
 
 import com.celular.model.Celular;
 import com.celular.model.Loja;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
 import java.io.File;
 
@@ -31,7 +31,10 @@ public class CelularController implements Initializable  {
             closeButton,
             addPhoneButton,
             openImageBtn,
-            closeButton2;
+            closeButton2,
+            searchPhone,
+            searchButton,
+            closeSearch;
 
     @FXML
     private TextField input1,
@@ -40,16 +43,20 @@ public class CelularController implements Initializable  {
             inputAdd2,
             inputAdd3,
             inputAdd4,
-            inputAdd5;
+            inputAdd5,
+            searchInput;
 
     @FXML
     private Label text1, text2;
 
     @FXML
-    private Pane addPhonePane, paneImage;
+    private Pane addPhonePane, paneImage, searchPane;
 
     @FXML
     private ImageView imageView;
+
+    @FXML
+    private VBox list;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -132,12 +139,12 @@ public class CelularController implements Initializable  {
             }
 
             Celular cel = new Celular(
-                    id,
-                    marca,
-                    modelo,
-                    cor,
-                    camera,
-                    memoria
+                id,
+                marca,
+                modelo,
+                cor,
+                camera,
+                memoria
             );
 
             loja.setNome("newPhone");
@@ -154,6 +161,25 @@ public class CelularController implements Initializable  {
 
             alert.showAndWait();
         });
+
+        searchPane.setVisible(false);
+
+        searchPhone.setOnAction(event -> {
+            searchPane.setVisible(true);
+        });
+
+        searchButton.setOnAction(event -> {
+            ObservableList<Celular> obList = FXCollections.observableArrayList(loja.getCelulares());
+            ListView<Celular> listView = new ListView<>(obList);
+
+            list.getChildren().add(listView);
+        });
+
+
+        closeSearch.setOnAction(event -> {
+            searchPane.setVisible(false);
+        });
+
 
         paneImage.setVisible(false);
 
