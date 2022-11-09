@@ -108,6 +108,12 @@ public class CelularController implements Initializable {
       for(Integer id:loja.getHashCelular()) {
         System.out.println("Id: "+id);
       }
+      System.out.println("-------------------------------------------");
+      int i = 1;
+      while(i <= loja.getDicCelular().size()) {
+        System.out.println("CELULAR: "+loja.getDicCelular().get(i));
+        i++;
+      }
     });
 
     addPhoneButton.setOnAction(event -> {

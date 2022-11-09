@@ -2,4 +2,9 @@
 <project name="Celular" default="default" basedir="." xmlns:fx="javafx:com.sun.javafx.tools.ant">
     <description>Builds, tests, and runs the project Celular.</description>
     <import file="nbproject/build-impl.xml"/>
+    <target name="default">
+        <taskdef resource="com/sun/javafx/tools/ant/antlib.xml"      
+                uri="javafx:com.sun.javafx.tools.ant"
+                classpath="src/lib/ant-javafx.jar"/>    
+    </target>
 </project>

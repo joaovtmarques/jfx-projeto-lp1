@@ -1,6 +1,8 @@
 package celular.model;
 
+import java.util.Dictionary;
 import java.util.HashSet;
+import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -9,12 +11,14 @@ public class Loja {
   private Long telefone;
   private List<Celular> celulares = new LinkedList<Celular>();
 	private HashSet<Integer> hashCelulares = new HashSet<Integer>();
+	private Dictionary<Integer, Celular> dicCelulares = new Hashtable<Integer, Celular>();
 
   public Loja() {}
 
   public void addCelular(Celular celular) {
     celulares.add(celular);
 		hashCelulares.add(celular.getId());
+		dicCelulares.put(celular.getId(), celular);
   }
 
   public List<Celular> getCelular() {
@@ -23,6 +27,10 @@ public class Loja {
 
 	public HashSet<Integer> getHashCelular() {
 		return hashCelulares;
+	}
+
+	public Dictionary<Integer, Celular> getDicCelular() {
+		return dicCelulares;
 	}
 
 	public String getNome() {
