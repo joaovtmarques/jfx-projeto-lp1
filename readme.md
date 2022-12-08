@@ -18,7 +18,7 @@
 
 ### Pré-requisitos
 
-Para clonar e rodar a aplicação, é necessário ter instalado em sua máquina o Java 8 e JavaFX SDK,
+Para clonar e rodar a aplicação, é necessário ter instalado em sua máquina o Java 9 e JavaFX SDK,
 [Git](https://git-scm.com), [Java](https://www.java.com/pt-BR/), [JavaFX SDK](https://www.oracle.com/java/technologies/install-javafx-sdk.html) e [Maven Apache](https://maven.apache.org/).
 Além disso, é legal ter um bom editor de código, como o [VSCode](https://code.visualstudio.com/).
 
