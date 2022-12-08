@@ -2,10 +2,12 @@ package com.celular.controller;
 
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.HashSet;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import com.celular.dao.ConnectionDAO;
 import com.celular.model.Celular;
 import com.celular.model.Loja;
 import javafx.collections.FXCollections;
@@ -57,6 +59,8 @@ public class CelularController implements Initializable  {
 
     @FXML
     private VBox list;
+
+    private ConnectionDAO dao = new ConnectionDAO();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -147,12 +151,17 @@ public class CelularController implements Initializable  {
                 memoria
             );
 
+            try {
+                dao.addCelular(cel);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+
             loja.setNome("newPhone");
             loja.setTelefone(new Long(1296438656));
             loja.addCelular(cel);
-
-            HashSet<Celular> dset = new HashSet<Celular>();
-            dset.add(new Celular());
 
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Cadastrado com sucesso");
